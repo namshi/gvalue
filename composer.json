@@ -1,0 +1,17 @@
+{
+    "name": "odino/gvalue",
+    "description": "A library to parse Google Docs and convert them into a key-value array",
+    "require": {
+        "guzzle/guzzle": "~3.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "odino",
+            "email": "alessandro.nadalin@gmail.com"
+        }
+    ]
+}
