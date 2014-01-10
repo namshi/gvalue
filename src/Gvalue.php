@@ -10,19 +10,19 @@ class Gvalue extends Client
 {
     const GOOGLE_DOC_URL = "https://spreadsheets.google.com/feeds/list/%s/od6/public/values?alt=json-in-script";
 
-    public function getDocument($id)
+    public function getDocument($key)
     {
-        return $this->formatContent($this->getDocumentContent($id));
+        return $this->formatContent($this->getDocumentContent($key));
     }
 
-    protected function getDocumentContent($id)
+    protected function getDocumentContent($key)
     {
-        $request = $this->get(sprintf(static::GOOGLE_DOC_URL, $id));
+        $request = $this->get(sprintf(static::GOOGLE_DOC_URL, $key));
 
         try {
             return $this->send($request)->getBody(true);
         } catch (ClientErrorResponseException $e) {
-            throw new DocumentRetrievalException($id, $request->getUrl(), $e->getResponse()->getStatusCode());
+            throw new DocumentRetrievalException($key, $request->getUrl(), $e->getResponse()->getStatusCode());
         }
     }
 

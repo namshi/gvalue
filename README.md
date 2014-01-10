@@ -52,29 +52,29 @@ Then you simply have to run the following code and get the key-value configurati
 ```
 <?php
 
-$googleDocId = '...' //ie. 0Au4X4OwTcvrSdG5oZkFXMXM5SUl4YVF5bDV2NmZiSmc
-$gvalue      = new Namshi\Gvalue();
+$googleDocKey = '...' //ie. 0Au4X4OwTcvrSdG5oZkFXMXM5SUl4YVF5bDV2NmZiSmc
+$gvalue       = new Namshi\Gvalue();
 
-$configuration = $gvalue->getDocument($googleDocId);
+$configuration = $gvalue->getDocument($googleDocKey);
 
 var_dump($configuration); // [a: b, 123: 456, ...]
 ```
 
-In order to get the document ID simply look at the URL of the spreadsheet, which will be something similar to
-`https://docs.google.com/spreadsheet/ccc?key=0Au4X4OwTcvrSdG5oZkFXMXM5SUl4YVF5bDV2NmZiSmc#gid=0`: the ID for this
+In order to get the document key simply look at the URL of the spreadsheet, which will be something similar to
+`https://docs.google.com/spreadsheet/ccc?key=0Au4X4OwTcvrSdG5oZkFXMXM5SUl4YVF5bDV2NmZiSmc#gid=0`: the key for this
 document would be `0Au4X4OwTcvrSdG5oZkFXMXM5SUl4YVF5bDV2NmZiSmc`.
 
 ## Security
 
-If you are concerned about the security implications of this tecnique consider the following:
+If you are concerned about the security implications of this technique consider the following:
 
-* the google doc link is not public, meaning that a malicious user wouldhave to **guess it**
-* you should store public configuration in the doc (ie. products per page) and not critical informations like SSH keys
+* the google doc link is not public, meaning that a malicious user would have to **guess it**
+* you should store public configuration in the doc (ie. products per page) and not critical information like SSH keys
 or  credentials for a service
 
 ## Updating configuration values
 
-Everytime a config value is updated you should republish the doc so that changes are immediately available.
+Every time a config value is updated you should republish the doc so that changes are immediately available.
 
 ## Tests
 
