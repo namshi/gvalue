@@ -68,7 +68,7 @@ document would be `0Au4X4OwTcvrSdG5oZkFXMXM5SUl4YVF5bDV2NmZiSmc`.
 
 If you are concerned about the security implications of this technique consider the following:
 
-* the google doc link is not public, meaning that a malicious user would have to **guess it**
+* the google doc link is not published anywhere by Google, meaning that a malicious user would have to **guess it**
 * you should store public configuration in the doc (ie. products per page) and not critical information like SSH keys
 or  credentials for a service
 
